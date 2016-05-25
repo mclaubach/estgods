@@ -1,0 +1,2 @@
+class DotaController < ApplicationController
+end

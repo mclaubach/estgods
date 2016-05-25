@@ -1,0 +1,28 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+.subnav {
+  height: 20px;
+}
+
+#show_hardbody {
+  color: pink;
+  margin: 5px;
+  font-size: 120%;
+  padding-top: 12px;
+}
+
+.footer {
+  padding-top: 10px;
+}
+
+.newpostbut,
+.newpostbut:visited {
+  color: #AF1E2C;
+  background-color: #E6BE8A;
+}

@@ -1,0 +1,33 @@
+<div id="yungtable">
+       <div class="col-sm-6">
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th><%= sortable "id" %></th>
+                <th><%= sortable "title" %></th>
+                <th><%= sortable "score" %></th>
+                <th></th>
+             </tr>
+            </thead>
+              <tbody>
+                <% @posts.each do |post| %>
+                  <tr data-link="<%= post_path(:id => post.id) %>">
+                    <td><%= button_to '+1', voteup_post_path(post), method: :edit %></td>
+                    <td><%= button_to '-1', votedown_post_path(post), method: :edit %></td>
+                    <td><%= link_to post.id, post_path(:id => post.id), remote: true %></td>
+                    <td><%= link_to post.title, post_path(:id => post.id), remote: true %></td>
+                    <td><%= pluralize(post.score, "puntos") %></td>
+                    <td><%= link_to '...', post %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+         <%= link_to 'make a new post', new_post_path, :class => "btn btn-default newpostbut" %>
+        </div>
+</div>
+  <div class="col-lg-4">
+    <div id="show_hardbody">
+    </div>
+</div>
