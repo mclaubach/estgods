@@ -14,14 +14,18 @@ class Dotauser < ActiveRecord::Base
   end
  end
 
-  def load_matches!(count)
-    matches_arr = Dota.api.matches(player_id: self.uid, limit: count)
-    if matches_arr && matches_arr.any?
+def load_matches!(count)
+ matches_arr = Dota.api.matches(player_id: self.uid, limit: count)
+  if matches_arr && matches_arr.any?
       matches_arr.each do |match|
         unless self.matches.where(uid: match.id).any?
           match_info = Dota.api.matches(match.id)
           new_match = self.matches.create({
                                             uid: match.id,
+                                            started_at: match_info.starts_at,
+                                            mode: match_info.mode,
+                                            duration: parse_duration(match_info.duration),
+                                            match_type: match_info.type
                                           })
         end
       end
