@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     rescue
       flash[:error] = "Can't authorize you...gg"
     else
-      @dotauser.load_matches!(7)
+      @dotauser.load_matches!(1)
       session[:dotauser_id] = @dotauser.id
       flash[:success] = "Welcome, #{@dotauser.nickname}!"
     end
