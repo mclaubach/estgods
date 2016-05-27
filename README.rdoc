@@ -1,28 +1,23 @@
-== README
+== ESTGODS     %%
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A website on the world wide web accessible to all
 
-Things you may want to cover:
+cool parts:
 
-* Ruby version
+* msg board
 
-* System dependencies
+* dota diary
 
-* Configuration
+* articles
 
-* Database creation
+coming soon:
 
-* Database initialization
+* recipes
 
-* How to run the test suite
+* photos
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* other cool stuff
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+matthew@wmmcorp.com
+
