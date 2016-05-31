@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :dota, only: [:index, :show]
   resources :matches, only: [:index, :show]
 
 

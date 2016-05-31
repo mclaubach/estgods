@@ -22,8 +22,9 @@ def load_matches!(count)
           match_info = Dota.api.matches(match.id)
           new_match = self.matches.create({
                                             uid: match.id,
-                                            started_at: match_info.starts_at,
                                             mode: match_info.mode,
+                                            winner: match_info.winner.to_s.titleize,
+                                            started_at: match_info.starts_at,
                                             duration: parse_duration(match_info.duration),
                                             match_type: match_info.type
                                           })

@@ -20,4 +20,5 @@ coming soon:
 
 
 matthew@wmmcorp.com
+check the gemfile
 
