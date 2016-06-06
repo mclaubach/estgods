@@ -4,6 +4,7 @@ class MatchesController < ApplicationController
   end
 
   def show
-    @match = Match.find_by(id: params[:id])
+    @match = Match.includes(:players).find_by(id: params[:id])
+    @players = @match.players.order('slot ASC').group_by(&:radiant)
   end
 end

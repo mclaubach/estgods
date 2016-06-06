@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524021354) do
+ActiveRecord::Schema.define(version: 20160606141825) do
 
   create_table "dotausers", force: :cascade do |t|
     t.string   "uid"
@@ -35,6 +35,33 @@ ActiveRecord::Schema.define(version: 20160524021354) do
   end
 
   add_index "matches", ["dotauser_id"], name: "index_matches_on_dotauser_id"
+
+  create_table "players", force: :cascade do |t|
+    t.integer  "match_id"
+    t.string   "uid"
+    t.text     "hero"
+    t.integer  "level"
+    t.integer  "kills"
+    t.integer  "deaths"
+    t.integer  "assists"
+    t.integer  "last_hits"
+    t.integer  "denies"
+    t.integer  "gold"
+    t.integer  "gpm"
+    t.integer  "xpm"
+    t.string   "status"
+    t.integer  "gold_spent"
+    t.integer  "hero_damage"
+    t.integer  "tower_damage"
+    t.integer  "hero_healing"
+    t.text     "items"
+    t.integer  "slot"
+    t.boolean  "radiant"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "players", ["match_id"], name: "index_players_on_match_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

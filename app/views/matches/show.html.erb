@@ -1,10 +1,15 @@
-<div class="col-sm-6">
 
-<h2 class="<%= @match.id %>"><%= @match.id %> was the id of this game game</h2>
 
 <ul>
   <li><strong>Mode:</strong> <%= @match.mode %></li>
   <li><strong>Type:</strong> <%= @match.match_type %></li>
   <li><strong>Duration:</strong> <%= @match.duration %></li>
 </ul>
-</div>
+
+<h3 class="radiant">Team Radiant</h3>
+
+<%= render 'players_table', players: @players[true] %>
+
+<h3 class="dire">Team Dire</h3>
+
+<%= render 'players_table', players: @players[false] %>
