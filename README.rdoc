@@ -26,4 +26,7 @@ matthew@wmmcorp.com
 check the gemfile
 
 div 10
-
+things up coming:
+change the db setup add fields to the the models
+loop the steam requests to account for bugs
+button to load match to reduce load on login
