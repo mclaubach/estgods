@@ -8,7 +8,6 @@ class CreateMatches < ActiveRecord::Migration
       t.string :match_type
       t.string :duration
       t.references :dotauser, index: true, foreign_key: true
-
       t.timestamps null: false
     end
   end

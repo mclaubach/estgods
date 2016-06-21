@@ -22,6 +22,12 @@ class Dotauser < ActiveRecord::Base
           match_info = Dota.api.matches(match.id)
           new_match = self.matches.create({
                                             uid: match.id,
+                                            winner: match_info.winner.to_s.titleize,
+                                            first_blood: parse_duration(match_info.first_blood),
+                                            started_at: match_info.starts_at,
+                                            mode: match_info.mode,
+                                            cluster: match_info.cluster,
+                                            duration: parse_duration(match_info.duration),
                                             match_type: match_info.type
                                           })
         end
